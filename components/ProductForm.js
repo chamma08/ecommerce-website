@@ -14,6 +14,10 @@ export default function ProductForm({_id,title:existingTitle,description:existin
 
     const router = useRouter(); 
 
+    function goBack() {
+        router.push('/products');
+    }
+
     //use axios to send req to API 
     async function createProduct(e){
         e.preventDefault();
@@ -93,6 +97,8 @@ function updateImagesOrder(images){
             <input type="number" placeholder='Price' value={price} onChange={e => setPrice(e.target.value)}/>
 
             <button type='submit' className="btn-primary">Save</button>
+            <button type='reset' className="btn-can ml-3" onClick={goBack}>Cancel</button>
+
         </form>
   )
 }

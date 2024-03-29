@@ -4,7 +4,7 @@ import {useRouter} from "next/router";
 
 export default function Nav({show}) {
   const inactiveLink = 'flex gap-1 p-1';
-  const activeLink = inactiveLink+' bg-highlight text-black rounded-sm';
+  const activeLink = inactiveLink+'  text-white font-semibold';
   const inactiveIcon = 'w-6 h-6';
   const activeIcon = inactiveIcon + ' text-primary';
   const router = useRouter();

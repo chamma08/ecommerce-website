@@ -5,6 +5,35 @@
 img{
     max-height: 100%;
 }
+
+
+.main{
+    margin-top: 5%;
+    margin-left: 5%;
+}
+
+.form{
+    margin-top: 2%;
+    width: 50vw;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff5;
+    min-height: 100vh;
+    
+    backdrop-filter: blur(7px);
+    box-shadow: 0 .4rem .8rem #0005;
+    border-radius: .6rem;
+
+    overflow: hidden;
+}
+
+.body{
+    width: 80%;
+    height: 10%;
+    padding-top: .8rem;
+    
+}
+
 input, textarea, select{
     @apply border border-gray-200 rounded-sm px-1 w-full py-2 px-3;
     @apply mb-2;
@@ -21,13 +50,18 @@ label{
 .btn-primary{
     @apply bg-blue-900 text-white p-4 rounded-md py-1
 }
+.btn-can{
+    @apply  bg-red-900 text-white p-4 rounded-md py-1
+}
+
+
 table.basic{
-    @apply w-full bg-white rounded-sm shadow-md;
+    @apply w-full h-full bg-white rounded-sm shadow-md;
 }
 table.basic thead tr td,
 table.basic thead tr th
 {
-    @apply text-sm text-gray-600 uppercase border-b border-gray-200 px-4 py-2;
+    @apply text-sm text-gray-600 uppercase border-b border-gray-300 px-4 py-2;
 }
 table.basic tr td{
     @apply px-4 py-1;
@@ -35,11 +69,12 @@ table.basic tr td{
 table.basic a{
     @apply px-4 rounded-sm inline-flex mx-1 items-center gap-1 text-sm py-1;
 }
+
 .btn-default, .btn-red{
     @apply px-4 py-1 rounded-md;
 }
 .btn-red{
-    @apply bg-red-200 text-red-600 px-4 py-1 rounded-sm shadow-sm;
+    @apply bg-red-600 text-white px-4 py-1 rounded-sm shadow-sm;
 }
 .btn-default{
     @apply bg-white text-gray-800 px-4 py-1 rounded-sm border border-gray-200 shadow-sm;
