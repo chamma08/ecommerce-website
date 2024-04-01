@@ -5,6 +5,6 @@ const productSchema = new Schema ({
     description: String,
     price: {type: Number, required: true},
     images: [{type: String}],
-});
+}, {timestamps: true});
 
 export const Product = models.Product || model('Product',productSchema);

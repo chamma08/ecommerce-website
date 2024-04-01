@@ -12,13 +12,11 @@ export default function Products() {
   }, []);
   return (
     <Layout>
-
+ 
       <main className='main'>
          <section className='head'>
           <Link className="bg-gray-300 font-medium rounded-md py-1 px-2 ml-4 mt-6"  href={'/products/new'}>Add new Product</Link>
         </section>
-      
-        
         <section className='body'>
           <table className="basic m-4">
           <thead>

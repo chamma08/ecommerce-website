@@ -6,7 +6,7 @@ export default function Layout({children}) {
   const { data: session } = useSession();
   
 
-  if(!session){
+  if(session){
     return (
     <div className="bg-sky-800 w-screen h-screen flex items-center">
       <div className="text-center w-full">
