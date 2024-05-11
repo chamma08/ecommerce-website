@@ -5,6 +5,10 @@ import React, { useEffect, useState } from 'react'
 
 export default function Products() {
   const [products,setProducts] = useState([]);
+  const [search, setSearch] = useState('');
+  console.log(search);
+
+
   useEffect(() => {
     axios.get('/api/products').then(response => {
       setProducts(response.data);
@@ -17,6 +21,10 @@ export default function Products() {
          <section className='head'>
           <Link className="bg-gray-300 font-medium rounded-md py-1 px-2 ml-4 mt-6"  href={'/products/new'}>Add new Product</Link>
         </section>
+
+        <form>
+          <input type="text" onChange={(e) => setSearch(e.target.value)} placeholder="Search" className="search" style={{marginTop:'40px', maxWidth:'925px', marginLeft:'16px'}}/>
+        </form>
         <section className='body'>
           <table className="basic m-4">
           <thead>
@@ -26,7 +34,9 @@ export default function Products() {
             </tr>
           </thead>
           <tbody>
-          {products.map(product => (
+          {products.filter((product)=>{
+            return product.title.toLowerCase().includes(search.toLowerCase());
+          }).map(product => (
             <tr key={product._id}>
               <td>{product.title}</td>
               <td>
