@@ -24,6 +24,7 @@ export default function Review() {
         <Layout>
             <div className="bg-white p-4 rounded-md shadow-md">
                 <h1 className="text-2xl font-semibold text-gray-800" >Support</h1>
+                <p className="text-gray-500">Manage/View all the Reviews from here</p>
             </div>
 
             <form>
@@ -32,8 +33,8 @@ export default function Review() {
         <section className='body'>
           <table className="basic m-4">
           <thead>
-            <tr>
-              <td>Review</td>
+            <tr style={{fontWeight:'bolder'}}>
+              <td >Name</td>
               <td>Summary</td>
               <td>Review</td>
             </tr>
