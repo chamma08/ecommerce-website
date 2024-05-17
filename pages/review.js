@@ -48,7 +48,7 @@ export default function Review() {
               <td>{review.summary}</td>
               <td>{review.review}</td>
               <td>
-                <button className="btn-red" onClick={() => deleteReviewHandler(review._id)} style={{ fontSize: '15px', padding: '5px', backgroundColor: 'red', color: 'white', borderRadius: '5px' }}>Delete</button>
+                <button className="btn-red" onClick={() => deleteReviewHandler(review._id)} style={{ fontSize: '15px', backgroundColor: 'red', color: 'white', borderRadius: '5px',marginLeft:'10px' }}>Delete</button>
               </td>
             </tr>
           ))}

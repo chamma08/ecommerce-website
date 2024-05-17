@@ -25,7 +25,7 @@ export default function Contents() {
         </section>
 
         <form>
-          <input type="text" onChange={(e) => setSearch(e.target.value)} placeholder="Search" className="search" style={{marginTop:'40px', maxWidth:'925px', marginLeft:'1px',border:'none',outline:'none'}}/>
+          <input type="text" onChange={(e) => setSearch(e.target.value)} placeholder="Search" className="search" style={{marginTop:'40px', maxWidth:'976px', marginLeft:'1px',border:'none',outline:'none'}}/>
         </form>
         <section className='body'>
           <table className="basic ">
