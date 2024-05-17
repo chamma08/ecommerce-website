@@ -1,21 +1,21 @@
 import { mongooseConnect } from "@/lib/mongoose";
-import { Order } from "@/models/Order";
+import { Review } from "@/models/Review";
 
-export default async function handle(req, res) {
+export default async function handle(req,res){
     const { method } = req;
     await mongooseConnect();
   
     switch (method) {
       case 'GET':
         if (req.query?.id) {
-          res.json(await Order.findOne({ _id: req.query.id }));
+          res.json(await Review.findOne({ _id: req.query.id }));
         } else {
-          res.json(await Order.find());
+          res.json(await Review.find());
         }
         break;
       case 'DELETE':
         if (req.query?.id) {
-          await Order.deleteOne({ _id: req.query.id });
+          await Review.deleteOne({ _id: req.query.id });
           res.json({ message: 'Order deleted successfully' });
         } else {
           res.status(400).json({ message: 'No order id provided' });
@@ -25,4 +25,4 @@ export default async function handle(req, res) {
         res.setHeader('Allow', ['GET', 'DELETE']);
         res.status(405).end(`Method ${method} Not Allowed`);
     }
-  }
+}

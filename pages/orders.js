@@ -1,38 +1,28 @@
 import Layout from "@/components/Layout";
 import axios from "axios";
-import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
-// Define the deleteOrder function
-async function deleteOrder(id) {
-  await mongooseConnect();
-  await Order.deleteOne({ _id: id });
-}
 
-// Define the OrdersPage component
+
 export default function OrdersPage() {
   const [orders, setOrders] = useState([]);
-  const router = useRouter();
   const [currentPage, setCurrentPage] = useState(1);
   const ordersPerPage = 10;
   const [searchQuery, setSearchQuery] = useState('');
-  const {id} = router.query;
 
   useEffect(() => {
     axios.get('/api/orders').then(response => {
       setOrders(response.data);
     });
-  }, []);
+  }, []);  
 
-  async function deleteOrderHandler(id) {
-    try {
-      await axios.delete(`/api/orders/${id}`);
-      const updatedOrders = orders.filter(order => order._id !== id);
-      setOrders(updatedOrders);
-    } catch (error) {
-      console.error(error);
-    }
+
+  const deleteOrderHandler = async (id) => {
+    await axios.delete(`/api/orders?id=${id}`);
+    const updatedOrders = orders.filter(order => order._id !== id);
+    setOrders(updatedOrders);
   };
+ 
   const indexOfLastOrder = currentPage * ordersPerPage;
   const indexOfFirstOrder = indexOfLastOrder - ordersPerPage;
   const currentOrders = orders.slice(indexOfFirstOrder, indexOfLastOrder);
